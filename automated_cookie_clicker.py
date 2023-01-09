@@ -2,11 +2,12 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 import time
+import os
 
 timeout = time.time() + 5
 five_min = time.time() + 60*5
 
-chrome_driver_path = 'chromedriver_win32\chromedriver.exe'
+chrome_driver_path = os.path.join('chromedriver_win32','chromedriver.exe')
 driver = webdriver.Chrome(service=Service(chrome_driver_path))
 
 driver.get('https://orteil.dashnet.org/cookieclicker/')
